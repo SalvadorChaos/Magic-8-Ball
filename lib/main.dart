@@ -1,9 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:image_fade/image_fade.dart';
+import 'package:shake/shake.dart';
 
 void main() => runApp(
       MaterialApp(
+        title: 'Magic 8 Ball',
         home: BallPage(),
       ),
     );
@@ -33,6 +36,22 @@ class Ball extends StatefulWidget {
 
 class _BallState extends State<Ball> {
   int ballNumber = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    ShakeDetector detector = ShakeDetector.waitForStart(
+      onPhoneShake: () {
+        print('phone shook');
+        setState(() {
+          ballNumber = Random().nextInt(9) + 1;
+          print('image changed');
+        });
+      },
+    );
+    detector.startListening();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +62,7 @@ class _BallState extends State<Ball> {
               ballNumber = Random().nextInt(9) + 1;
             });
           },
-          child: Image(
+          child: ImageFade(
             image: AssetImage('images/ball$ballNumber.png'),
           ),
         ),
