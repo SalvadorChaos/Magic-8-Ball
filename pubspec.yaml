@@ -1,7 +1,7 @@
 name: magic_8_ball
 description: A new Flutter application.
 
-version: 1.0.0+1
+version: 1.0.2+2
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -12,7 +12,11 @@ dependencies:
 
   shake: ^0.1.0
 
+  system_shortcuts: ^1.0.0
+
   cupertino_icons: ^0.1.2
+
+  hardware_buttons: ^0.2.4
 
   image_fade: ^0.2.1
 

@@ -16,7 +16,7 @@ class ShakeSwitch extends StatelessWidget {
         children: <Widget>[
           Text('$isSwitchedText' + ' Shake'),
           Switch(
-            activeColor: Colors.deepPurpleAccent,
+            activeColor: Color(0xff11A4D9), //Colors.deepPurpleAccent,
             inactiveThumbColor: Colors.black38,
             value: value,
             onChanged: onChanged,

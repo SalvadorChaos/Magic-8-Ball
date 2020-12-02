@@ -9,6 +9,9 @@ class Magic8Ball extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Magic 8 Ball',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
       home: BallPage(),
     );
   }
